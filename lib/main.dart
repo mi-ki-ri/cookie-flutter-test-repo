@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sounds/sounds.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -26,6 +28,12 @@ class MyCounter extends StatefulWidget {
 class _MyCounterState extends State<MyCounter> {
   int myCount = 0;
   void increment() {
+    // dont rings
+    var track = Track.fromAsset('metal.mp3');
+    if(track != null){
+      QuickPlay.fromTrack(track, volume: 1.0);
+    }
+    
     setState(() {
       myCount += 1;
     });
@@ -45,7 +53,6 @@ class _MyCounterState extends State<MyCounter> {
           onPressed: increment,
           child: Icon(Icons.plus_one),
           backgroundColor: Colors.amber,
-          
         ),
         Spacer()
       ],
