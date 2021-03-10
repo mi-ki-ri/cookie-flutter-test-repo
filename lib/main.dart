@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sounds/sounds.dart';
-
+import 'package:soundpool/soundpool.dart';
+import 'package:flutter/services.dart'; // use rootBundle
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  // Soundpoolインスタンスの初期化（１度だけ）
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,14 +28,18 @@ class MyCounter extends StatefulWidget {
 }
 
 class _MyCounterState extends State<MyCounter> {
+  Soundpool _pool = Soundpool(streamType: StreamType.notification);
+
   int myCount = 0;
-  void increment() {
-    // dont rings
-    var track = Track.fromAsset('metal.mp3');
-    if(track != null){
-      QuickPlay.fromTrack(track, volume: 1.0);
-    }
-    
+  void increment() async {
+// ファイルの読み込み
+    int soundId =
+        await rootBundle.load("assets/sounds/slidedown.wav").then((soundData) {
+      return _pool.load(soundData);
+    });
+// 再生
+    int streamId = await _pool.play(soundId);
+
     setState(() {
       myCount += 1;
     });

@@ -4,6 +4,8 @@ PODS:
   - Flutter (1.0.0)
   - path_provider (0.0.1):
     - Flutter
+  - soundpool (0.0.1):
+    - Flutter
   - sounds (0.0.1):
     - Flutter
 
@@ -11,6 +13,7 @@ DEPENDENCIES:
   - device_info (from `.symlinks/plugins/device_info/ios`)
   - Flutter (from `Flutter`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - soundpool (from `.symlinks/plugins/soundpool/ios`)
   - sounds (from `.symlinks/plugins/sounds/ios`)
 
 EXTERNAL SOURCES:
@@ -20,6 +23,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
+  soundpool:
+    :path: ".symlinks/plugins/soundpool/ios"
   sounds:
     :path: ".symlinks/plugins/sounds/ios"
 
@@ -27,6 +32,7 @@ SPEC CHECKSUMS:
   device_info: d7d233b645a32c40dfdc212de5cf646ca482f175
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  soundpool: c7f4422ca206e77f8900ed3c4ee6a6ff5a0e38a9
   sounds: 8931411efc6013ed55ffec79513cfdff67090e83
 
 PODFILE CHECKSUM: 4208c648cabeb4932ae36dae682384d0a9cd9706
