@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Cookie Flutter'),
+          backgroundColor: Colors.brown,
         ),
         body: Center(child: MyCounter()),
       ),
@@ -38,7 +39,7 @@ class _MyCounterState extends State<MyCounter> {
         Spacer(),
         Text(
           myCount.toString(),
-          style: TextStyle(color: Colors.amberAccent),
+          style: TextStyle(color: Colors.brown),
         ),
         FloatingActionButton(
           onPressed: increment,
